@@ -6,5 +6,4 @@ public class CleanableImpl implements Cleanable {
         System.out.println("clean");
     }
 
-
 }
