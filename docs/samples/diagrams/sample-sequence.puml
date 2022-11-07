@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title Diagram
+
+client -> subject: setState(state)
+activate subject #yellow
+subject -> subject: notify()
+activate subject #cyan
+subject --> observer: update()
+subject <-- observer: observerState = getState()
+deactivate subject
+subject --> client
+deactivate subject
+
+@enduml
