@@ -10,6 +10,5 @@ public class App {
         List<Author> authorList = new ArrayList<>();
         //filter authors by age
         //get the first 15 while checking uniqueness
-        authorList.stream().filter();
     }
 }
