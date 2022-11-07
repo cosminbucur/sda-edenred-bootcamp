@@ -1,0 +1,72 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title Class diagram
+
+' comment
+/'
+Multiline comment
+'/
+
+/' Objects '/
+
+interface Interface
+abstract AbstractClass
+
+class Class {
+field:Type
+method():void
+}
+
+enum Enum {
+ONE
+TWO
+}
+
+/' Relationships '/
+
+Class1 <|-- Class2:extension
+Class3 *-- Class4:composition
+Class5 o-- Class6:aggregation
+
+Class7 .. Class8
+Class9 -- Class10
+
+Class11 <|.. Class12
+Class13 --> Class14
+Class15 ..> Class16
+Class17 ..|> Class18
+Class19 <--* Class20
+
+/' Visibility '/
+
+class Sample {
+' private
+ -privateField:Type
+' protected
+ #protectedField:Type
+' default
+ ~packagePrivateMethod():Type
+' public
+ +publicMethod():Type
+
+' static
+ {static} +staticMethod():Type
+' abstract
+ {abstract}+abstractMethod():Type
+
+}
+
+/' Notes '/
+note top of Note: top
+note bottom of Note: bottom
+note left of Note: left
+note right of Note: right
+
+note as problem
+    "some text"
+end note
+
+footer © 2022 Cosmin Bucur
+
+@enduml

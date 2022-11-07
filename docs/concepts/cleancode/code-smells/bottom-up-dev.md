@@ -1,0 +1,7 @@
+- Begin by implementing the lowest layer of your application
+- Code only what you need for your feature to work
+- Test it
+- Refactor your code, if necessary
+- Move one layer up
+- Code only what you need for your feature to work
+- Test your new code if necessary
