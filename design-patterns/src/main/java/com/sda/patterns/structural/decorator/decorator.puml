@@ -1,0 +1,33 @@
+@startuml
+
+class Client
+
+interface Component {
++execute():void
+}
+
+class ConcreteComponent {
++execute():void
+}
+
+abstract Decorator {
++execute():void
+}
+
+class ConcreteDecoratorA {
++addedState
++execute():void
+}
+
+class ConcreteDecoratorB {
++execute():void
++addedBehavior():void
+}
+
+Component <|-- ConcreteComponent
+Component <--o Decorator
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-- ConcreteDecoratorB
+Client --> Component
+
+@enduml

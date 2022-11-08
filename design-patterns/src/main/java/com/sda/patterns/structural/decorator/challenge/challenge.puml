@@ -1,0 +1,33 @@
+@startuml
+
+class Client
+
+interface Car {
++assemble()
+}
+
+class StandardCar {
++assemble()
+}
+
+abstract CarDecorator {
+-car: Car
++CarDecorator(Car car)
++abstract assemble()
+}
+
+class SportsCar {
++assemble()
+}
+
+class LuxuryCar {
++assemble()
+}
+
+Client --> Car
+Car <|-- StandardCar
+CarDecorator <|-- SportsCar
+CarDecorator <|-- LuxuryCar
+Car <--o CarDecorator
+
+@enduml

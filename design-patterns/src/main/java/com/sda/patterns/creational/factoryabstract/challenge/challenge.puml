@@ -1,0 +1,54 @@
+@startuml
+
+class Client
+
+interface Processor {
++attachStorage(storage:Storage):void
++printSpecs():void
+}
+
+class AppleProcessor {
+}
+
+class HpProcessor {
+}
+
+interface Storage {
+}
+
+class AppleStorage {
+-storageSize:int
+}
+
+class HpStorage {
+-storageSize:int
+}
+
+interface LaptopFactory {
++createProcessor():Processor
++createStorage():Storage
+}
+
+class AppleLaptop {
++createProcessor():Processor
++createStorage():Storage
+}
+
+class HpLaptop {
++createProcessor():Processor
++createStorage():Storage
+}
+
+LaptopFactory <|-- AppleLaptop
+LaptopFactory <|-- HpLaptop
+Processor <|-- AppleProcessor
+Processor <|-- HpProcessor
+Storage <|-- AppleStorage
+Storage <|-- HpStorage
+AppleLaptop ---> AppleProcessor
+AppleLaptop ---> HpProcessor
+HpLaptop ---> AppleStorage
+HpLaptop ---> HpStorage
+Client --> LaptopFactory: uses
+
+@enduml

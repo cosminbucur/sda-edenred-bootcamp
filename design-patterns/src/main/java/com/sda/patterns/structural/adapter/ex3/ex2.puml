@@ -1,0 +1,29 @@
+@startuml
+
+class Client
+
+interface MovableAdapter {
++getSpeed():double
+}
+note left: target (km/h)
+
+class MovableAdapterImpl {
+-movable:Movable
++getSpeed():double
+}
+
+interface Movable {
++getSpeed():double
+}
+note left: adaptee (miles/h)
+
+class Duster {
++getSpeed():double
+}
+
+MovableAdapter <|-- MovableAdapterImpl
+MovableAdapterImpl --> Movable
+Movable <|-- Duster
+Client --> MovableAdapter
+
+@enduml
