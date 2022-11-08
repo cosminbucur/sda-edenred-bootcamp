@@ -1,4 +1,4 @@
-package Singleton;
+package com.sda.singleton;
 
 public class EagerSingleton {
     //eager loading by instantiating the singleton directly from instance variable

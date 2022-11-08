@@ -1,4 +1,4 @@
-package Singleton;
+package com.sda.singleton;
 
 public class LazySingleton {
 
