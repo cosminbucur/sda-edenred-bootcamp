@@ -1,0 +1,17 @@
+@startuml
+
+class Client
+
+class BaseText {
++apply()
+}
+
+class TextDecorators {
++uppercase(String input)
++quotes(String input)
+}
+
+Client --> BaseText
+BaseText --> TextDecorators
+
+@enduml

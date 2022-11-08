@@ -1,0 +1,42 @@
+@startuml
+
+class Client
+
+' FIXME this
+
+note left: target
+interface MediaPlayer {
++play(audioType, filename)
+}
+
+class AudioPlayer {
++play(audioType, filename)
+}
+
+class AdvancedMediaPlayerAdapter {
++play(audioType, filename)
+}
+
+note left: adaptee
+interface AdvancedMediaPlayer {
++loadFilename(filename)
++listen(filename)
+}
+
+class VlcPlayer {
++loadFilename(filename)
++listen(filename)
+}
+
+class Mp4Player {
++loadFilename(filename)
++listen(filename)
+}
+
+MediaPlayer <|-- AudioPlayer
+AdvancedMediaPlayerAdapter --> MediaPlayer
+AdvancedMediaPlayer <|-- VlcPlayer
+AdvancedMediaPlayer <|-- Mp4Player
+Client --> AdvancedMediaPlayer
+
+@enduml

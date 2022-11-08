@@ -1,0 +1,37 @@
+@startuml
+
+class Client
+
+interface Product {
++execute()
+}
+
+class ConcreteProductA {
++execute()
+}
+
+class ConcreteProductB {
++execute()
+}
+
+abstract Creator {
+{static} +createProduct():Product
++someOperation():void
+}
+
+class ConcreteCreatorA {
++createProduct():Product
+}
+
+class ConcreteCreatorB {
++createProduct():Product
+}
+
+Creator <|-- ConcreteCreatorA
+Creator <|-- ConcreteCreatorB
+Product <|-- ConcreteProductA
+Product <|-- ConcreteProductB
+ConcreteCreatorA ---> ConcreteProductA
+Client --> Creator
+
+@enduml

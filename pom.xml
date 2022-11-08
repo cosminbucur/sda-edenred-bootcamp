@@ -11,6 +11,12 @@
     <modules>
         <module>fundamentals</module>
         <module>java-advanced</module>
+<<<<<<< HEAD
+        <module>project</module>
+        <module>DesignPatternsPractice</module>
+=======
+        <module>design-patterns</module>
+>>>>>>> 15b695264235e1ae3909af3ae95dce01ff179403
     </modules>
 
     <properties>

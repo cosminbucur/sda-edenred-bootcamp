@@ -1,0 +1,23 @@
+@startuml
+
+class Client
+
+interface TV {
++ createTV()
+}
+
+class TVSimpleFactory {
++ getTV(mode: TVMode): TV
+}
+
+enum TVMode {
+    COLOR
+    LED
+    LCD
+}
+
+TVSimpleFactory --> TV: creates
+TVSimpleFactory --> TVMode: uses
+Client --> TVSimpleFactory
+
+@enduml

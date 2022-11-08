@@ -1,0 +1,50 @@
+@startuml
+
+class Client
+
+interface AbstractProductA {
+}
+
+class ProductA1 {
+}
+
+class ProductA2 {
+}
+
+interface AbstractProductB {
+}
+
+class ProductB1 {
+}
+
+class ProductB2 {
+}
+
+abstract AbstractFactory {
++createProductA():void
++createProductB():void
+}
+
+class ConcreteFactory1 {
++createProductA():void
++createProductB():void
+}
+
+class ConcreteFactory2 {
++createProductA():void
++createProductB():void
+}
+
+AbstractFactory <|-- ConcreteFactory1
+AbstractFactory <|-- ConcreteFactory2
+AbstractProductA <|-- ProductA1
+AbstractProductA <|-- ProductA2
+AbstractProductB <|-- ProductB1
+AbstractProductB <|-- ProductB2
+ConcreteFactory1 ---> ProductA1
+ConcreteFactory1 ---> ProductA2
+ConcreteFactory2 ---> ProductB1
+ConcreteFactory2 ---> ProductB2
+Client --> AbstractFactory: uses
+
+@enduml
