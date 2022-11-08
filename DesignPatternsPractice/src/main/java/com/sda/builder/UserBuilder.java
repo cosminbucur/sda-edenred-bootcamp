@@ -7,30 +7,33 @@ public class UserBuilder {
     private String phone; // optional
     private String address; // optional
 
-    public void setFirstName(String firstName) {
+    public UserBuilder setFirstName(String firstName) {
         this.firstName = firstName;
+        return this;
     }
 
-    public void setLastName(String lastName) {
+    public UserBuilder setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
     }
 
-    public void setAge(int age) {
+    public UserBuilder setAge(int age) {
         this.age = age;
+        return this;
     }
 
-    public void setPhone(String phone) {
+    public UserBuilder setPhone(String phone) {
         this.phone = phone;
+        return this;
     }
 
-    public void setAddress(String address) {
+    public UserBuilder setAddress(String address) {
         this.address = address;
+        return this;
     }
 
-    public User build(){
-        User user = new User();
-
-        return user;
+    public User build() {
+        return new User(firstName, lastName,age,phone,address);
 
     }
 

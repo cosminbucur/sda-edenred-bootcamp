@@ -5,5 +5,9 @@ public class App {
         //Builder design pattern helps with creating complex objects
         //where certain fields can be optional, resulting in the use
         // of too many constructors when instantiating in the traditional way
+//        User user = new UserBuilder().setAge(20);
+        User user = new UserBuilder().setAge(20).setLastName("whatever").build();
+
+
     }
 }
