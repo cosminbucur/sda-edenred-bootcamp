@@ -1,0 +1,16 @@
+@startuml
+
+class Client
+
+interface Parent {
++execute()
+}
+
+class Child {
++execute()
+}
+
+Parent <|-- Child
+Client --> Parent
+
+@enduml

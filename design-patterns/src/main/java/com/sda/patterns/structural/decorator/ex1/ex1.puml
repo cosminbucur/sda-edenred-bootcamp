@@ -1,0 +1,33 @@
+@startuml
+
+class Client
+
+interface Text {
++format(String input)
+}
+
+class BaseText {
++format(String input)
+}
+
+abstract TextDecorator {
+-text: Text
++TextDecorator(Text text)
++abstract format(String input)
+}
+
+class Uppercase {
++format(String input)
+}
+
+class Quotes {
++format(String input)
+}
+
+Client --> Text
+Text <|-- BaseText
+TextDecorator <|-- Uppercase
+TextDecorator <|-- Quotes
+Text <--o TextDecorator
+
+@enduml

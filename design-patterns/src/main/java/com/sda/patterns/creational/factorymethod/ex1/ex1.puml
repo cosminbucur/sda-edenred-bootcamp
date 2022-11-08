@@ -1,0 +1,29 @@
+@startuml
+
+class Client
+
+abstract Car {
+Car(carType: CarType)
+{abstract}+build()
+}
+
+class DieselCar {
++build()
+}
+
+class ElectricCar {
++build()
+}
+
+class CarFactory {
+{static}buildCar(carType: CarType): Car
+}
+
+Creator <|-- ConcreteCreatorA
+Creator <|-- ConcreteCreatorB
+Car <|-- ElectricCar
+Car <|-- DieselCar
+CarFactory --> Car
+Client --> CarFactory
+
+@enduml

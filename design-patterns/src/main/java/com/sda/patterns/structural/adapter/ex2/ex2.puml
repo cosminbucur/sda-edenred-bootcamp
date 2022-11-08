@@ -1,0 +1,30 @@
+@startuml
+
+class Client
+
+class Voltage {
+-volts:int
+}
+
+class Socket {
++getVoltage():Voltage
+}
+note left: adaptee
+
+interface SocketAdapter {
++get220Voltage():void
++get110Voltage():void
+}
+note left: target
+
+class SocketClassAdapter {
++get220Voltage():void
++get110Voltage():void
+-convertVoltage(voltage:int, i:int)
+}
+
+SocketAdapter <|-- SocketClassAdapter
+Client --> SocketAdapter
+SocketClassAdapter --> Socket
+
+@enduml
