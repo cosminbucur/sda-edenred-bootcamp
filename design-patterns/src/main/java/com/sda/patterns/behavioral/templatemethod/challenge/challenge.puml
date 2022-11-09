@@ -1,0 +1,27 @@
+@startuml
+
+class Client
+
+abstract HouseTemplate {
++buildHouse():void
+-buildFoundation():void
+-buildWindows():void
++{abstract}buildWalls():void
++{abstract}buildPillars():void
+}
+
+class WoodHouse {
++buildWalls():void
++buildPillars():void
+}
+
+class StoneHouse {
++buildWalls():void
++buildPillars():void
+}
+
+HouseTemplate <|-- WoodHouse
+HouseTemplate <|-- StoneHouse
+Client --> HouseTemplate
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+
+class Client
+
+interface Strategy {
++algorithm():void
+}
+
+class ConcreteStrategyA {
++algorithm():void
+}
+
+class ConcreteStrategyB {
++algorithm():void()
+}
+
+class StrategyContext {
++context():void
+}
+
+Strategy <|-- ConcreteStrategyA
+Strategy <|-- ConcreteStrategyB
+StrategyContext o--> Strategy
+Client --> Strategy
+
+@enduml

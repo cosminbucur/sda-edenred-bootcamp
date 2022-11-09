@@ -1,0 +1,42 @@
+@startuml
+
+class Client
+
+interface SortStrategy {
++sort(list:List<String>):void
+}
+
+class QuickSort {
++sort(list:List<String>):void
+}
+
+class BubbleSort {
++sort(list:List<String>):void
+}
+
+interface SearchStrategy {
++search(input:String):void
+}
+
+class BinarySearch {
++search(input:String):void
+}
+
+class LinearSearch {
++search(input:String):void
+}
+
+class Context {
++sort(list:List<String>):void
++search(input:String):void
+}
+
+SortStrategy <|-- QuickSort
+SortStrategy <|-- BubbleSort
+SearchStrategy <|-- BinarySearch
+SearchStrategy <|-- LinearSearch
+Context o--> SortStrategy
+Context o--> SearchStrategy
+Client --> Context: uses
+
+@enduml

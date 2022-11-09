@@ -1,0 +1,31 @@
+@startuml
+
+class Client
+
+interface PayStrategy {
++pay()
+}
+
+class Order {
+}
+note left: context
+
+class PayByPayPal {
++pay()
+}
+
+class PayByCreditCard {
++pay()
+}
+
+class Card {
+}
+
+PayStrategy <|-- PayByPayPal
+PayStrategy <|-- PayByCreditCard
+PayByCreditCard --> Card: uses
+Order o--> PayStrategy
+Client --> Order
+
+
+@enduml

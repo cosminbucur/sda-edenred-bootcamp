@@ -1,0 +1,39 @@
+@startuml
+
+class Client
+
+class Car {
+-name:String
+}
+
+class Parking {
+-cars:List<Car>
+-listeners:List<CarAddedListener>
++addCar(car: Car)
++register(l: CarAddedListener)
++unregister(l: CarAddedListener)
++notify(l: CarAddedListener)
+}
+note top: subject
+
+interface CarAddedListener {
++onCarAdded(car:Car)
+}
+note left: listener
+
+class PrintNameCarAddedListener {
++onCarAdded(car: Car)
+}
+
+class CountingCarAddedListener {
+-{static}carCount: int
++onCarAdded(car: Car)
+}
+
+CarAddedListener <|-- PrintNameCarAddedListener
+CarAddedListener <|-- CountingCarAddedListener
+Parking <-- PrintNameCarAddedListener: uses
+Parking --> Car: uses
+Client --> Parking
+
+@enduml

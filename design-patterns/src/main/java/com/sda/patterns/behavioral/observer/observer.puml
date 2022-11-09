@@ -1,0 +1,32 @@
+@startuml
+
+class Client
+
+interface Subject {
++register(o: Observer)
++unregister(o: Observer)
++notify()
+}
+
+class ConcreteSubject {
+-state:State
++getState():State
++setState(s:State)
+}
+
+interface Observer {
++update()
+}
+
+class ConcreteObserver {
+-observerState:State
++ConcreteObserver(subject:Subject)
++update()
+}
+
+Subject <|-- ConcreteSubject
+Observer <|-- ConcreteObserver
+ConcreteSubject <-- ConcreteObserver: uses
+Client --> ConcreteSubject
+
+@enduml

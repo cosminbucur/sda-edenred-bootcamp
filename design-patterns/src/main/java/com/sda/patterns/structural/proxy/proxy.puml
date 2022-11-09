@@ -1,0 +1,22 @@
+@startuml
+
+class Client
+
+interface ProxySubject {
++request():void
+}
+
+class RealProxySubject {
++request():void
+}
+
+class Proxy {
++request():void
+}
+
+ProxySubject <|-- RealProxySubject
+ProxySubject <|-- Proxy
+Proxy --> RealProxySubject
+Client --> ProxySubject
+
+@enduml

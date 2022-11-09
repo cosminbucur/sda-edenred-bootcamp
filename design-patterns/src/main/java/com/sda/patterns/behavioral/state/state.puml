@@ -1,0 +1,27 @@
+@startuml
+
+class Client
+
+class Context {
+-currentState:State
++request()
+}
+
+interface State {
++handle()
+}
+
+class StateOne {
++handle()
+}
+
+class StateTwo{
++handle()
+}
+
+Context o--> State
+State <|-- StateOne
+State <|-- StateTwo
+Client --> Context
+
+@enduml

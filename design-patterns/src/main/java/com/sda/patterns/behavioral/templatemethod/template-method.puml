@@ -1,0 +1,19 @@
+@startuml
+
+class Client
+
+abstract AbstractClass {
++templateMethod():void
++operation1():void
++operation2():void
+}
+
+class ConcreteClass {
++operation1():void
++operation2():void
+}
+
+AbstractClass <|-- ConcreteClass
+Client --> AbstractClass
+
+@enduml

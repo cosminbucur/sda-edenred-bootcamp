@@ -1,0 +1,22 @@
+@startuml
+
+class Client
+
+interface Video {
++request():void
+}
+
+class RealVideo {
++request():void
+}
+
+class ProxyVideo {
++request():void
+}
+
+Video <|-- RealVideo
+Video <|-- ProxyVideo
+ProxyVideo --> RealVideo
+Client --> Video: uses
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+
+class Client
+
+class Inventory {
++iterator():InventoryItemIterator
+}
+note top: aggregator
+
+interface ItemIterator {
++hasNext():boolean
++next():Item
+}
+note top: iterator
+
+class InventoryItemIterator {
++hasNext():boolean
++next():Item
+}
+
+class Item {
+-type:ItemType
+-name:String
+}
+
+enum ItemType {
+WEAPON
+RING
+POTION
+}
+
+ItemIterator <|-- InventoryItemIterator
+Inventory --> InventoryItemIterator
+Item --> ItemType
+ItemIterator --> Item
+Client --> Inventory
+
+@enduml

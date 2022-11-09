@@ -1,0 +1,55 @@
+@startuml
+
+class Client
+
+interface Command {
++execute():void
+}
+
+class FanOff {
++execute():void
+}
+
+class FanOn {
++execute():void
+}
+
+class LightOn {
++execute():void
+}
+
+class LightOff {
++execute():void
+}
+
+class Fan {
++action():void
+}
+note left: receiver
+
+class Light {
++action():void
+}
+note right: receiver
+
+class Switch {
+-up:Command
+-down:Command
++flipUp():void
++flipDown():void
+}
+note left: invoker
+
+Client --> Switch: creates
+Client --> FanOff: uses
+Command <|-- FanOn
+Command <|-- FanOff
+Command <|-- LightOn
+Command <|-- LightOff
+Switch o--> Command: calls
+FanOn --> Fan
+FanOff --> Fan
+LightOn --> Light
+LightOff --> Light
+
+@enduml

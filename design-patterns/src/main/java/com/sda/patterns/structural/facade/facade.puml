@@ -1,0 +1,32 @@
+@startuml
+
+class Client
+
+interface Facade {
++execute():void
+}
+
+
+class ConcreteFacade {
++execute():void
+}
+
+class Subsystem1 {
++operation1():void
+}
+
+class Subsystem2 {
++operation2():void
+}
+
+class Subsystem3 {
++operation3():void
+}
+
+Facade <|-- ConcreteFacade
+ConcreteFacade --> Subsystem1
+ConcreteFacade --> Subsystem2
+ConcreteFacade --> Subsystem3
+Client --> Facade
+
+@enduml

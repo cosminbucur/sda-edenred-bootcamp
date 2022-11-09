@@ -1,0 +1,33 @@
+@startuml
+
+class Client
+
+class Context {
+-currentState:PackageState
+-packageId:String
++update()
+}
+
+interface PackageState {
++updateState(context:Context):void
+}
+
+class Prepared {
++updateState(context:Context):void
+}
+
+class InTransit {
++updateState(context:Context):void
+}
+
+class Delivered {
++updateState(context:Context):void
+}
+
+Context o--> PackageState
+PackageState <|-- Prepared
+PackageState <|-- InTransit
+PackageState <|-- Delivered
+Client --> Context
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+
+class Client
+
+interface Action {
++perform():void
+}
+
+class Open {
++perform():void
+}
+
+class Save {
++perform():void
+}
+
+class Close {
++perform():void
+}
+
+class Editor {
++action():void
+}
+note left: receiver
+
+class Macro {
+-actions:List<Action>
++record(action:Action):void
++run():void
+}
+note left: invoker
+
+Client --> Macro: creates
+Client --> Open: uses
+Action <|-- Open
+Action <|-- Save
+Action <|-- Close
+Macro o--> Action: calls
+Open --> Editor
+
+@enduml

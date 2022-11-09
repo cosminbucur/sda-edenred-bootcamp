@@ -1,0 +1,31 @@
+@startuml
+
+class Client
+
+interface Subject {
++register()
++unregister()
++notify()
+}
+
+class Topic {
+subjectState
++getStatus()
++getState()
+}
+
+interface Observer {
++update()
+}
+
+class TopicSubscriber {
+observerState
++update()
+}
+
+Subject <|-- Topic
+Observer <|-- TopicSubscriber
+Topic --> TopicSubscriber
+Client --> Topic
+
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+
+class Client
+
+interface SocialNetwork {
++iterator():SocialNetworkIterator
+}
+note top: aggregator
+
+class Linkedin {
++iterator():ProfileIterator
+}
+
+interface SocialNetworkIterator {
++hasNext():boolean
++next():Profile
+}
+note top: iterator
+
+class ProfileIterator {
++hasNext():boolean
++next():Profile
+}
+
+class Profile {
+-name:String
+-email:String
+}
+
+SocialNetwork <|-- Linkedin
+SocialNetworkIterator <|-- ProfileIterator
+Linkedin --> ProfileIterator
+SocialNetworkIterator --> Profile
+Client --> Linkedin
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+
+class Client
+
+interface OrderServiceFacade {
++placeOrder(productId:Long):boolean
+}
+note left: facade
+
+class OrderServiceFacadeImpl {
++placeOrder(productId:Long):boolean
+}
+
+class InventoryService {
++isAvailable(product:Product):boolean
+}
+
+class PaymentService {
++makePayment():boolean
+}
+
+class ShippingService {
++shipProduct(product:Product):void
+}
+
+OrderServiceFacade <|-- OrderServiceFacadeImpl
+OrderServiceFacadeImpl --> InventoryService
+OrderServiceFacadeImpl --> PaymentService
+OrderServiceFacadeImpl --> ShippingService
+Client --> OrderServiceFacade
+
+@enduml

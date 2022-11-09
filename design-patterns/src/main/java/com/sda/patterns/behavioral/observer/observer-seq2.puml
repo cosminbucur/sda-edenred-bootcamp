@@ -1,0 +1,21 @@
+@startuml
+
+title observer pattern
+
+client -> subject: setState(state)
+activate subject #yellow
+subject -> subject: notify()
+activate subject #cyan
+subject --> observer1: update(newState)
+activate observer1 #lightgreen
+observer1 --> observer1: observerState = newState
+deactivate observer1
+subject --> observer2: update(newState)
+activate observer2 #orange
+observer2 --> observer2: observerState = newState
+deactivate observer2
+deactivate subject
+subject --> client
+deactivate subject
+
+@enduml

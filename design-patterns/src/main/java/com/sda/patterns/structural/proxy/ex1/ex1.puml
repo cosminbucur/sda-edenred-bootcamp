@@ -1,0 +1,22 @@
+@startuml
+
+class Client
+
+interface Library {
++request():void
+}
+
+class RealLibrary {
++request():void
+}
+
+class LibraryProxy {
++request():void
+}
+
+Library <|-- RealLibrary
+Library <|-- LibraryProxy
+LibraryProxy --> RealLibrary
+Client --> Library: uses
+
+@enduml

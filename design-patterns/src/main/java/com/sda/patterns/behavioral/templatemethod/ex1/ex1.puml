@@ -1,0 +1,29 @@
+@startuml
+
+class Client
+
+abstract OrderTemplate {
++process():void
++{abstract}selectItem():void
++{abstract}pay():void
++wrap():void
++{abstract}deliver():void
+}
+
+class OnlineOrder {
++{abstract}selectItem():void
++{abstract}pay():void
++{abstract}deliver():void
+}
+
+class StoreOrder {
++{abstract}selectItem():void
++{abstract}pay():void
++{abstract}deliver():void
+}
+
+OrderTemplate <|-- OnlineOrder
+OrderTemplate <|-- StoreOrder
+Client --> OrderTemplate
+
+@enduml
