@@ -12,6 +12,8 @@
         <module>fundamentals</module>
         <module>java-advanced</module>
         <module>design-patterns</module>
+        <module>jdbc</module>
+        <module>hibernate</module>
     </modules>
 
     <properties>
