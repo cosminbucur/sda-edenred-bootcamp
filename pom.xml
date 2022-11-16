@@ -9,12 +9,23 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <!-- java core -->
         <module>fundamentals</module>
         <module>java-advanced</module>
         <module>design-patterns</module>
+
+        <!-- spring -->
+        <module>spring-core</module>
+
+        <!-- parent-boot-2 -->
+        <module>parent-boot-2</module>
+        <module>spring-boot</module>
+
+        <!-- persistence -->
         <module>jdbc</module>
         <module>hibernate</module>
-        <module>spring-core</module>
+
+        <module>lombok</module>
     </modules>
 
     <properties>
