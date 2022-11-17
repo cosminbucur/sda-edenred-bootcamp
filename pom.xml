@@ -24,6 +24,7 @@
         <!-- persistence -->
         <module>jdbc</module>
         <module>hibernate</module>
+        <module>spring-data-jpa</module>
 
         <module>lombok</module>
     </modules>
