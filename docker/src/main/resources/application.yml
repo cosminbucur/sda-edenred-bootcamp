@@ -1,0 +1,21 @@
+# server port
+server.port: 8081
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    # db is the name defined in docker compose
+    # postgres is the default database
+    url: jdbc:postgresql://db:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        format_sql: false

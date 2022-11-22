@@ -1,0 +1,11 @@
+### create product
+POST http://localhost:8081/products
+Content-Type: application/json
+
+{
+  "id": null,
+  "name": "test"
+}
+
+### find all
+GET http://localhost:8081/products

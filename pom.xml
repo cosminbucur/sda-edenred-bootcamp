@@ -32,9 +32,11 @@
         <module>testing-advanced</module>
         <module>spring-resttemplate</module>
         <module>spring-webflux</module>
+        <module>json-schema</module>
 
         <!-- microservices -->
         <module>microservices</module>
+        <module>docker</module>
     </modules>
 
     <properties>
