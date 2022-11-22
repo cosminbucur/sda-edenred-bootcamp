@@ -29,6 +29,12 @@
         <!-- web -->
         <module>lombok</module>
         <module>spring-boot-rest</module>
+        <module>testing-advanced</module>
+        <module>spring-resttemplate</module>
+        <module>spring-webflux</module>
+
+        <!-- microservices -->
+        <module>microservices</module>
     </modules>
 
     <properties>
