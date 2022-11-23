@@ -22,7 +22,7 @@ public class SpringTestingApplication {
         SpringApplication.run(SpringTestingApplication.class);
     }
 
-    //    @Bean
+//    @Bean
     CommandLineRunner data() {
         return args -> paperRepository.saveAll(createPapers());
     }

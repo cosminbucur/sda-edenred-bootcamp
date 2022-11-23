@@ -71,6 +71,12 @@ public class PaperService {
         return paperMapper.toDto(savedPaper);
     }
 
+    private void updateFields(PaperRequest request, Paper paper) {
+        paper.setTitle(request.getTitle());
+        paper.setAuthor(request.getAuthor());
+        paper.setPublished(request.getPublished());
+    }
+
     public void delete(Long id) {
         paperRepository.deleteById(id);
     }
@@ -91,11 +97,5 @@ public class PaperService {
             log.error("could not patch paper with id: {} and updates: {}", id, updates);
         }
         return null;
-    }
-
-    private void updateFields(PaperRequest request, Paper paper) {
-        paper.setTitle(request.getTitle());
-        paper.setAuthor(request.getAuthor());
-        paper.setPublished(request.getPublished());
     }
 }

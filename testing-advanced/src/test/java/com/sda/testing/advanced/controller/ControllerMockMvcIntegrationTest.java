@@ -24,68 +24,68 @@ import com.sda.testing.advanced.service.PaperService;
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
 @SpringBootTest(
-		webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT,
-		classes = {SpringTestingApplication.class, H2TestProfileJpaConfig.class}
+        webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT,
+        classes = {SpringTestingApplication.class, H2TestProfileJpaConfig.class}
 )
 class ControllerMockMvcIntegrationTest {
 
-	@LocalServerPort
-	private static final int port = 8083;
+    @LocalServerPort
+    private static final int port = 8083;
 
-	private static final String API_BOOKS = "/papers";
-	private static final String BASE_URI = "http://localhost:" + port + "/api";
+    private static final String API_BOOKS = "/papers";
+    private static final String BASE_URI = "http://localhost:" + port + "/api";
 
-	@Autowired
-	private MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
-	@Autowired
-	private PaperService paperService;
+    @Autowired
+    private PaperService paperService;
 
-	@BeforeEach
-	void setUp() {
-	}
+    @BeforeEach
+    void setUp() {
+    }
 
-	@Test
-	void create() {
-	}
+    @Test
+    void create() {
+    }
 
-	@Test
-	void givenRequest_whenFindAll_thenReturn200() throws Exception {
-		PaperRequest request = new PaperRequest();
-		request.setTitle("game of thrones");
-		request.setAuthor("george martin");
-		request.setPublished(LocalDate.of(2000, 6, 30));
-		paperService.save(request);
+    @Test
+    void givenRequest_whenFindAll_thenReturn200() throws Exception {
+        PaperRequest request = new PaperRequest();
+        request.setTitle("game of thrones");
+        request.setAuthor("george martin");
+        request.setPublished(LocalDate.of(2000, 6, 30));
+        paperService.save(request);
 
-		mockMvc.perform(
-						MockMvcRequestBuilders.get(BASE_URI + "/" + API_BOOKS)).
-				andExpect(MockMvcResultMatchers.status().isOk()).
-				andExpect(MockMvcResultMatchers.content()
-						.string("[" +
-								"{\"id\":1," +
-								"\"title\":\"game of thrones\"," +
-								"\"author\":\"george martin\"," +
-								"\"published\":\"2000-06-30\"" +
-								"}]"));
-	}
+        mockMvc.perform(
+                        MockMvcRequestBuilders.get(BASE_URI + "/" + API_BOOKS)).
+                andExpect(MockMvcResultMatchers.status().isOk()).
+                andExpect(MockMvcResultMatchers.content()
+                        .string("[" +
+                                "{\"id\":1," +
+                                "\"title\":\"game of thrones\"," +
+                                "\"author\":\"george martin\"," +
+                                "\"published\":\"2000-06-30\"" +
+                                "}]"));
+    }
 
-	@Test
-	void findById() {
-	}
+    @Test
+    void findById() {
+    }
 
-	@Test
-	void getPapersByAuthor() {
-	}
+    @Test
+    void getPapersByAuthor() {
+    }
 
-	@Test
-	void update() {
-	}
+    @Test
+    void update() {
+    }
 
-	@Test
-	void partialUpdate() {
-	}
+    @Test
+    void partialUpdate() {
+    }
 
-	@Test
-	void delete() {
-	}
+    @Test
+    void delete() {
+    }
 }

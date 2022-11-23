@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 
 class SampleTest {
 
-	@Test
-	void givenEntity_whenToDto_thenReturnDto() {
-		// given
+    @Test
+    void givenEntity_whenToDto_thenReturnDto() {
+        // given
 
-		// when
+        // when
 
-		// then
-		assertThat(1).isEqualTo(1);
-	}
+        // then
+        assertThat(1).isEqualTo(1);
+    }
 
 }

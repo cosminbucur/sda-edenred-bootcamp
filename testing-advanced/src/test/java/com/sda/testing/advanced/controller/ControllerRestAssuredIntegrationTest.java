@@ -25,64 +25,64 @@ import io.restassured.http.ContentType;
 @ActiveProfiles("test")
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(
-		webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-		classes = {SpringTestingApplication.class, H2TestProfileJpaConfig.class}
+        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+        classes = {SpringTestingApplication.class, H2TestProfileJpaConfig.class}
 )
 class ControllerRestAssuredIntegrationTest {
 
-	private static final String API_BOOKS = "/papers";
+    private static final String API_BOOKS = "/papers";
 
-	@LocalServerPort
-	public int port;
+    @LocalServerPort
+    public int port;
 
-	@Autowired
-	PaperService paperService;
+    @Autowired
+    PaperService paperService;
 
-	@BeforeEach
-	void setUp() {
-		RestAssured.baseURI = "http://localhost:" + port + "/api";
-		RestAssured.port = port;
-	}
+    @BeforeEach
+    void setUp() {
+        RestAssured.baseURI = "http://localhost:" + port + "/api";
+        RestAssured.port = port;
+    }
 
-	@Test
-	void create() {
-	}
+    @Test
+    void create() {
+    }
 
-	@Test
-	void givenRequest_whenFindAll_thenReturn200() {
-		PaperRequest request = new PaperRequest();
-		request.setTitle("game of thrones");
-		request.setAuthor("george martin");
-		request.setPublished(LocalDate.of(2000, 6, 30));
-		paperService.save(request);
+    @Test
+    void givenRequest_whenFindAll_thenReturn200() {
+        PaperRequest request = new PaperRequest();
+        request.setTitle("game of thrones");
+        request.setAuthor("george martin");
+        request.setPublished(LocalDate.of(2000, 6, 30));
+        paperService.save(request);
 
-		given()
-				.when()
-				.get(API_BOOKS)
-				.then()
-				.assertThat()
-				.statusCode(200)
-				.contentType(ContentType.JSON)
-				.body("[0].title", equalTo("game of thrones"));
-	}
+        given()
+                .when()
+                .get(API_BOOKS)
+                .then()
+                .assertThat()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("[0].title", equalTo("game of thrones"));
+    }
 
-	@Test
-	void findById() {
-	}
+    @Test
+    void findById() {
+    }
 
-	@Test
-	void getPapersByAuthor() {
-	}
+    @Test
+    void getPapersByAuthor() {
+    }
 
-	@Test
-	void update() {
-	}
+    @Test
+    void update() {
+    }
 
-	@Test
-	void partialUpdate() {
-	}
+    @Test
+    void partialUpdate() {
+    }
 
-	@Test
-	void delete() {
-	}
+    @Test
+    void delete() {
+    }
 }

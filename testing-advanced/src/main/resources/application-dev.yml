@@ -20,7 +20,7 @@ logging:
     org.springframework.web: DEBUG
     org.hibernate: ERROR
     com.sda.testing.advanced: DEBUG
-  file.name: testing-advanced/logs/application.log
+  file.name: testing-advanced/log/application.log
 
 frontend:
   baseUrl: http://localhost:4200
